@@ -26,6 +26,7 @@
 		2DA753811A0709B300600A10 /* wtf-internet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7537C1A0709B300600A10 /* wtf-internet.m4a */; };
 		2DA753821A0709B300600A10 /* wtf-internet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7537C1A0709B300600A10 /* wtf-internet.m4a */; };
 		2DEA42A41A0736160056DC4D /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEA42A31A0736160056DC4D /* SoundController.swift */; };
+		2DEA42A51A0757B30056DC4D /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEA42A31A0736160056DC4D /* SoundController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -423,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA7535C1A06115100600A10 /* SecondViewController.swift in Sources */,
+				2DEA42A51A0757B30056DC4D /* SoundController.swift in Sources */,
 				2DA753581A06115100600A10 /* AppDelegate.swift in Sources */,
 				2DA7535A1A06115100600A10 /* FirstViewController.swift in Sources */,
 			);
@@ -529,7 +531,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = InternetSoundBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -571,7 +573,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = InternetSoundBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
