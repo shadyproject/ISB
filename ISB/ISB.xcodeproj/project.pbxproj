@@ -25,6 +25,7 @@
 		2DA753801A0709B300600A10 /* lickers.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7537B1A0709B300600A10 /* lickers.m4a */; };
 		2DA753811A0709B300600A10 /* wtf-internet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7537C1A0709B300600A10 /* wtf-internet.m4a */; };
 		2DA753821A0709B300600A10 /* wtf-internet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7537C1A0709B300600A10 /* wtf-internet.m4a */; };
+		2DEA42A41A0736160056DC4D /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEA42A31A0736160056DC4D /* SoundController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		2DA7537A1A0709B300600A10 /* eat.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = eat.m4a; sourceTree = "<group>"; };
 		2DA7537B1A0709B300600A10 /* lickers.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lickers.m4a; sourceTree = "<group>"; };
 		2DA7537C1A0709B300600A10 /* wtf-internet.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "wtf-internet.m4a"; sourceTree = "<group>"; };
+		2DEA42A31A0736160056DC4D /* SoundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,8 +184,9 @@
 		2DA7534E1A06112400600A10 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2DEA42A31A0736160056DC4D /* SoundController.swift */,
 			);
-			name = Core;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		2DA753541A06115100600A10 /* ISB */ = {
@@ -402,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA753781A06146900600A10 /* StatusItemController.swift in Sources */,
+				2DEA42A41A0736160056DC4D /* SoundController.swift in Sources */,
 				2DA753341A06110F00600A10 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -864,6 +868,7 @@
 				2DA753481A06110F00600A10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2DA753491A06110F00600A10 /* Build configuration list for PBXNativeTarget "InternetSoundBoardTests" */ = {
 			isa = XCConfigurationList;
@@ -872,6 +877,7 @@
 				2DA7534B1A06110F00600A10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2DA753711A06115100600A10 /* Build configuration list for PBXNativeTarget "ISB" */ = {
 			isa = XCConfigurationList;
@@ -880,6 +886,7 @@
 				2DA753731A06115100600A10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2DA753741A06115100600A10 /* Build configuration list for PBXNativeTarget "ISBTests" */ = {
 			isa = XCConfigurationList;
@@ -888,6 +895,7 @@
 				2DA753761A06115100600A10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

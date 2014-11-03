@@ -8,9 +8,11 @@
 
 import Foundation
 import Cocoa
+import AVFoundation
 
 class StatusItemController: NSObject {
     let statusBarItem = NSStatusBar.systemStatusBar().statusItemWithLength(24.0)
+    let soundController = SoundController()
     
     override init() {
         super.init()
@@ -46,14 +48,15 @@ class StatusItemController: NSObject {
     }
     
     func playInternet() {
-        println("What the fuck is the internet?")
+        soundController.playInternet()
     }
     
     func playYouAre() {
-        println("You are the ones who are the ball lickers")
+        soundController.playBalls()
     }
     
     func playEat() {
-        println("We're going to make them eat our shit etc etc")
+        soundController.playEat()
     }
+
 }
