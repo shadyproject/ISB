@@ -9,6 +9,8 @@
 import UIKit
 
 class FirstViewController: UIViewController {
+    
+    let soundController = SoundController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,16 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func touchInternet(sender: UIButton) {
+        soundController.playInternet()
+    }
 
+    @IBAction func touchEat(sender: UIButton) {
+        soundController.playEat()
+    }
+    
+    @IBAction func touchBalls(sender: UIButton) {
+        soundController.playBalls()
+    }
 }
 
