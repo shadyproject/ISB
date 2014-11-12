@@ -28,13 +28,20 @@ class StatusItemController: NSObject {
     func setupMenu() -> NSMenu {
         let menu = NSMenu()
         
-        func addItemToMenu(name: String, action: Selector, target: AnyObject) {
-            menu.addItemWithTitle(name, action: action, keyEquivalent: "")?.target = target
+        func addItemToMenu(name: String, action: Selector, target: AnyObject) -> NSMenuItem {
+            let item =  menu.addItemWithTitle(name, action: action, keyEquivalent: "")!
+            item.target = target
+            return item
         }
         
         addItemToMenu("Internet?", Selector("playInternet"), self)
         addItemToMenu("You are the ones", Selector("playYouAre"), self)
         addItemToMenu("Eat", Selector("playEat"), self)
+        
+        menu.addItem(NSMenuItem.separatorItem())
+        
+        let startupMenuItem = addItemToMenu("Launch on Startup", Selector("toggleStartupLaunch"), self)
+        startupMenuItem.state = LoginItemController.appExistsAsLoginItem() ? NSOnState : NSOffState
         
         menu.addItem(NSMenuItem.separatorItem())
         
@@ -57,6 +64,19 @@ class StatusItemController: NSObject {
     
     func playEat() {
         soundController.playEat()
+    }
+    
+    func toggleStartupLaunch() {
+        let item = statusBarItem.menu?.itemWithTitle("Launch on Startup")
+        
+        if LoginItemController.appExistsAsLoginItem() {
+            LoginItemController.removeAppFromLoginItems()
+            item?.state = NSOffState
+        } else {
+            LoginItemController.addAppToLoginItems()
+            item?.state = NSOnState
+        }
+        
     }
 
 }
