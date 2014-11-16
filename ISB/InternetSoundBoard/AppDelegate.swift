@@ -21,6 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationShouldTerminate(sender: NSApplication) -> NSApplicationTerminateReply {
+        //explicitly remove our status bar icon
         statusItemController = nil
         return NSApplicationTerminateReply.TerminateNow
     }
