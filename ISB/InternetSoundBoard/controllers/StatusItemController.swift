@@ -34,6 +34,10 @@ class StatusItemController: NSObject {
             return item
         }
         
+        addItemToMenu("Import...", Selector("showImportUi"), self)
+        
+        menu.addItem(NSMenuItem.separatorItem())
+        
         addItemToMenu("Internet?", Selector("playInternet"), self)
         addItemToMenu("You are the ones", Selector("playYouAre"), self)
         addItemToMenu("Eat", Selector("playEat"), self)
