@@ -29,6 +29,7 @@
 		2DA753801A0709B300600A10 /* lickers.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7537B1A0709B300600A10 /* lickers.m4a */; };
 		2DA753811A0709B300600A10 /* wtf-internet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7537C1A0709B300600A10 /* wtf-internet.m4a */; };
 		2DA753821A0709B300600A10 /* wtf-internet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7537C1A0709B300600A10 /* wtf-internet.m4a */; };
+		2DC942071A2CB85D00487E27 /* ImportWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC942061A2CB85D00487E27 /* ImportWindow.swift */; };
 		2DEA42A41A0736160056DC4D /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEA42A31A0736160056DC4D /* SoundController.swift */; };
 		2DEA42A51A0757B30056DC4D /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEA42A31A0736160056DC4D /* SoundController.swift */; };
 		2DFC95071A1FA80700145438 /* ImportWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFC95061A1FA80700145438 /* ImportWindow.xib */; };
@@ -82,6 +83,7 @@
 		2DA7537B1A0709B300600A10 /* lickers.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lickers.m4a; sourceTree = "<group>"; };
 		2DA7537C1A0709B300600A10 /* wtf-internet.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "wtf-internet.m4a"; sourceTree = "<group>"; };
 		2DC7E6D21A125E5100EBE285 /* InternetSoundBoard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InternetSoundBoard-Bridging-Header.h"; sourceTree = "<group>"; };
+		2DC942061A2CB85D00487E27 /* ImportWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportWindow.swift; sourceTree = "<group>"; };
 		2DEA42A31A0736160056DC4D /* SoundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 		2DFC95061A1FA80700145438 /* ImportWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportWindow.xib; sourceTree = "<group>"; };
 		2DFC95081A1FA95600145438 /* LoginItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginItemController.h; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 		2DFC95041A1FA47500145438 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2DC942061A2CB85D00487E27 /* ImportWindow.swift */,
 			);
 			name = Views;
 			path = views;
@@ -471,6 +474,7 @@
 				2DFC95101A1FACA100145438 /* ImportController.swift in Sources */,
 				2DFC950B1A1FA95600145438 /* LoginItemController.m in Sources */,
 				2DFC950C1A1FA95600145438 /* StatusItemController.swift in Sources */,
+				2DC942071A2CB85D00487E27 /* ImportWindow.swift in Sources */,
 				2D19B1F81A07927000AC4F97 /* Extensions.swift in Sources */,
 				2D19B1F51A07736E00AC4F97 /* YoutubeParser.swift in Sources */,
 				2DFC950E1A1FA96500145438 /* AppDelegate.swift in Sources */,
