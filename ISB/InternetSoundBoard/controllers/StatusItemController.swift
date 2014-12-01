@@ -1,4 +1,3 @@
-//
 //  StatusItemController.swift
 //  ISB
 //
@@ -80,7 +79,10 @@ class StatusItemController: NSObject {
             LoginItemController.addAppToLoginItems()
             item?.state = NSOnState
         }
-        
+    }
+
+    func showImportUi() -> Void {
+        println("This is where we'll show the UI")
     }
 
 }
