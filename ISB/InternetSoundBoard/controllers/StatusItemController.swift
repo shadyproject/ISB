@@ -13,6 +13,8 @@ class StatusItemController: NSObject {
     let statusBarItem = NSStatusBar.systemStatusBar().statusItemWithLength(24.0)
     let soundController = SoundController()
     
+    var importWindow: ImportWindow? = nil
+    
     override init() {
         super.init()
         
@@ -82,7 +84,24 @@ class StatusItemController: NSObject {
     }
 
     func showImportUi() -> Void {
-        println("This is where we'll show the UI")
-    }
+        var nibItems:NSArray? = nil
 
+        let loadSucceded = NSBundle.mainBundle().loadNibNamed("ImportWindow", owner: self, topLevelObjects: &nibItems)
+
+        if loadSucceded {
+            if let things = nibItems {
+                for thing in things {
+                    //one of the items in the nib is the NSApplication instance, other is the window we want
+                    //probably can fix this in the nib itself instead of the below trickery
+                    if thing.isKindOfClass(ImportWindow) {
+                        importWindow = thing as? ImportWindow
+                        importWindow!.makeKeyAndOrderFront(self)
+                        break
+                    }
+                }
+            }
+        } else {
+            println("Could not load Import Window from xib")
+        }
+    }
 }
