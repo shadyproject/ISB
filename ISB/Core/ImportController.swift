@@ -23,7 +23,7 @@ protocol ImportControllerDelegate {
 
 class ImportController {
 
-    internal var delegate: ImportControllerDelegate!
+    internal var delegate: ImportControllerDelegate
 
     init(delegate: ImportControllerDelegate) {
         self.delegate = delegate
