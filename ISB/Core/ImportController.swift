@@ -32,8 +32,14 @@ class ImportController {
     internal func startImport(fromUrl:NSURL!) {
         println("Starting Import")
         delegate.didStart((ImportStatus.Running(0.0)))
-
-        println("Halfway There")
+        
+        //TODO this should maybe happen on a background thread since we're doing network stuff
+        println("Parsing URL")
+        let info = YoutubeParser.h264VideosForYoutubeUrl(youtubeUrl: fromUrl)
+        println("Got Url")
+        delegate.status(ImportStatus.Running(10.0))
+        
+        println("Loading stream into AVFoundation")
         delegate.status(ImportStatus.Running(50.0))
 
         println("Almost Done")

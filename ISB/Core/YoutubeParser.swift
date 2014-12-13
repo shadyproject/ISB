@@ -36,11 +36,11 @@ class YoutubeParser {
         
         //I feel like this could be more functional-y
         if (url.host == "youtu.be") {
-            return url.pathComponents[1] as String
+            return url.pathComponents![1] as String
         } else if (url.absoluteString!.rangeOfString("www.youtube.com/embed") != nil) {
-            return url.pathComponents[2] as String
-        } else if (url.host == "youtube.googleapis.com" || url.pathComponents.first! as NSString == "www.youtube.com") {
-            return url.pathComponents[2] as String
+            return url.pathComponents![2] as String
+        } else if (url.host == "youtube.googleapis.com" || url.pathComponents!.first! as NSString == "www.youtube.com") {
+            return url.pathComponents![2] as String
         } else {
             return url.dictionaryForQueryString()["v"]!
         }
@@ -48,7 +48,6 @@ class YoutubeParser {
     
     internal class func h264VideosForYoutubeId(youtubeId id:NSString) -> VideoInfo {
         let url = NSURL(string: "\(YoutubeInfoUrl)\(id)")
-        println("Requesting url \(url)")
         let req = NSMutableURLRequest(URL: url!)
         req.setValue(UserAgent, forHTTPHeaderField: "User-Agent")
         req.HTTPMethod = "GET"
@@ -89,15 +88,25 @@ class YoutubeParser {
                 }
             }
         }
-        
         let title = parts["title"]!
         let thumbUrl = NSURL(string:parts["iurl"]!)
         let length = parts["length_seconds"]!.toInt()!
-        let smallUrl = NSURL(string:qualityDict["small"]!)
-        let mediumUrl = NSURL(string:qualityDict["medium"]!)
-        let hdUrl = NSURL(string:qualityDict["hd720"]!)
         
-        return VideoInfo(title: title, thumbnailUrl: thumbUrl, length: length, smallUrl: smallUrl, mediumUrl: mediumUrl, hdUrl: hdUrl)
+        let smallUrlStr = qualityDict["small"] ?? ""
+        let smallUrl = NSURL(string:smallUrlStr)
+        
+        let mediumUrlStr = qualityDict["medium"] ?? ""
+        let mediumUrl = NSURL(string: mediumUrlStr)
+        
+        let hdUrlStr = qualityDict["hd720"] ?? ""
+        let hdUrl = NSURL(string: hdUrlStr)
+        
+        let info = VideoInfo(title: title, thumbnailUrl: thumbUrl, length: length,
+            smallUrl:  smallUrl,
+            mediumUrl: mediumUrl,
+            hdUrl: hdUrl)
+        
+        return info
     }
     
     internal class func h264VideosForYoutubeUrl(youtubeUrl url:NSURL!) -> VideoInfo {
