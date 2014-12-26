@@ -62,7 +62,7 @@ class YoutubeParser {
             println("An error occured: \(unwrappedError)")
         }
         
-        var qualityDict = Dictionary<String, String>()
+        var qualityDict = [String: String]()
         let responseString = NSString(data:respData!, encoding:NSUTF8StringEncoding)
         let parts = (responseString! as String).dictionaryFromQueryStringComponents()
         
@@ -74,14 +74,14 @@ class YoutubeParser {
             let type = components["type"]!.first!.stringByDecodingUrlFormat()
             var signature:String? = nil
             
-            if (components["stereo3d"] != nil) {
+            if (components["stereo3d"] == nil) {
                 if (components["itag"] != nil) {
                     signature = components["itag"]?.first
                 }
                 
                 if(signature != nil && type.rangeOfString("mp4").location > 0) {
                     let url = components["url"]!.first!.stringByDecodingUrlFormat()
-                    let urlWithSig = "\(url)&signature=\(signature)"
+                    let urlWithSig = "\(url)&signature=\(signature!)"
                     
                     let quality = components["quality"]!.first!.stringByDecodingUrlFormat()
                     qualityDict[quality] = urlWithSig
