@@ -42,7 +42,7 @@ class YoutubeParser {
         } else if (url.host == "youtube.googleapis.com" || url.pathComponents!.first! as NSString == "www.youtube.com") {
             return url.pathComponents![2] as String
         } else {
-            return url.dictionaryForQueryString()["v"]!
+           return url.dictionaryForQueryString()["v"]!.first!
         }
     }
     
@@ -66,31 +66,31 @@ class YoutubeParser {
         let responseString = NSString(data:respData!, encoding:NSUTF8StringEncoding)
         let parts = (responseString! as String).dictionaryFromQueryStringComponents()
         
-        let streamMap = parts["url_encoded_fmt_stream_map"]
-        let streamMapItems = streamMap!.componentsSeparatedByString(",")
+        let streamMap = parts["url_encoded_fmt_stream_map"]!
+        let streamMapItems = streamMap.first!.componentsSeparatedByString(",")
         
         for videoEncodedString in streamMapItems {
             let components = videoEncodedString.dictionaryFromQueryStringComponents()
-            let type = components["type"]!.stringByDecodingUrlFormat()
+            let type = components["type"]!.first!.stringByDecodingUrlFormat()
             var signature:String? = nil
             
             if (components["stereo3d"] != nil) {
                 if (components["itag"] != nil) {
-                    signature = components["itag"]
+                    signature = components["itag"]?.first
                 }
                 
                 if(signature != nil && type.rangeOfString("mp4").location > 0) {
-                    let url = components["url"]!.stringByDecodingUrlFormat()
+                    let url = components["url"]!.first!.stringByDecodingUrlFormat()
                     let urlWithSig = "\(url)&signature=\(signature)"
                     
-                    let quality = components["quality"]!.stringByDecodingUrlFormat()
+                    let quality = components["quality"]!.first!.stringByDecodingUrlFormat()
                     qualityDict[quality] = urlWithSig
                 }
             }
         }
-        let title = parts["title"]!
-        let thumbUrl = NSURL(string:parts["iurl"]!)
-        let length = parts["length_seconds"]!.toInt()!
+        let title = parts["title"]!.first!
+        let thumbUrl = NSURL(string:parts["iurl"]!.first!)
+        let length = parts["length_seconds"]!.first!.toInt()!
         
         let smallUrlStr = qualityDict["small"] ?? ""
         let smallUrl = NSURL(string:smallUrlStr)

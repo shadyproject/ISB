@@ -14,8 +14,8 @@ extension String {
         return result.stringByReplacingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
     }
     
-    func dictionaryFromQueryStringComponents() -> Dictionary<String, String> {
-        var dict = Dictionary<String, String>()
+    func dictionaryFromQueryStringComponents() -> [String: [String]] {
+        var dict = [String: [String]]()
         
         for pair in self.componentsSeparatedByString("&") {
             let kv = pair.componentsSeparatedByString("=")
@@ -26,7 +26,13 @@ extension String {
             let key = kv[0].stringByDecodingUrlFormat()
             let value = kv[1].stringByDecodingUrlFormat()
             
-            dict[key] = value
+            if var array = dict[key] {
+                array.append(value)
+            } else {
+                dict[key] = [String]()
+                dict[key]!.append(value)
+            }
+            
         }
         
         return dict
@@ -34,7 +40,7 @@ extension String {
 }
 
 extension NSURL {
-    func dictionaryForQueryString() -> Dictionary<String, String> {
+    func dictionaryForQueryString() -> [String: [String]] {
         return self.query!.dictionaryFromQueryStringComponents()
     }
 }
