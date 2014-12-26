@@ -30,6 +30,10 @@
 		2DA753811A0709B300600A10 /* wtf-internet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7537C1A0709B300600A10 /* wtf-internet.m4a */; };
 		2DA753821A0709B300600A10 /* wtf-internet.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7537C1A0709B300600A10 /* wtf-internet.m4a */; };
 		2DC942071A2CB85D00487E27 /* ImportWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC942061A2CB85D00487E27 /* ImportWindow.swift */; };
+		2DE195731A4DD04300B456AE /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE195721A4DD04300B456AE /* ExtensionTests.swift */; };
+		2DE195741A4DD04300B456AE /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE195721A4DD04300B456AE /* ExtensionTests.swift */; };
+		2DE195761A4DD0E400B456AE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19B1F71A07927000AC4F97 /* Extensions.swift */; };
+		2DE195771A4DD0E500B456AE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19B1F71A07927000AC4F97 /* Extensions.swift */; };
 		2DEA42A41A0736160056DC4D /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEA42A31A0736160056DC4D /* SoundController.swift */; };
 		2DEA42A51A0757B30056DC4D /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEA42A31A0736160056DC4D /* SoundController.swift */; };
 		2DFC95071A1FA80700145438 /* ImportWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFC95061A1FA80700145438 /* ImportWindow.xib */; };
@@ -84,6 +88,7 @@
 		2DA7537C1A0709B300600A10 /* wtf-internet.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "wtf-internet.m4a"; sourceTree = "<group>"; };
 		2DC7E6D21A125E5100EBE285 /* InternetSoundBoard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InternetSoundBoard-Bridging-Header.h"; sourceTree = "<group>"; };
 		2DC942061A2CB85D00487E27 /* ImportWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportWindow.swift; sourceTree = "<group>"; };
+		2DE195721A4DD04300B456AE /* ExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		2DEA42A31A0736160056DC4D /* SoundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 		2DFC95061A1FA80700145438 /* ImportWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportWindow.xib; sourceTree = "<group>"; };
 		2DFC95081A1FA95600145438 /* LoginItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginItemController.h; sourceTree = "<group>"; };
@@ -207,6 +212,7 @@
 		2DA7534E1A06112400600A10 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2DE195721A4DD04300B456AE /* ExtensionTests.swift */,
 				2DEA42A31A0736160056DC4D /* SoundController.swift */,
 				2D19B1F41A07736E00AC4F97 /* YoutubeParser.swift */,
 				2D19B1F71A07927000AC4F97 /* Extensions.swift */,
@@ -488,6 +494,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA753451A06110F00600A10 /* InternetSoundBoardTests.swift in Sources */,
+				2DE195761A4DD0E400B456AE /* Extensions.swift in Sources */,
+				2DE195731A4DD04300B456AE /* ExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +519,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA753701A06115100600A10 /* ISBTests.swift in Sources */,
+				2DE195771A4DD0E500B456AE /* Extensions.swift in Sources */,
+				2DE195741A4DD04300B456AE /* ExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
